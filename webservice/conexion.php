@@ -10,7 +10,7 @@
 		private $nombreBd = 'scm_orquideas';
 		private $usuarioBd = 'root';
 		private $passwordBd = 'warhammer';
-		
+		//private $pass
 		public function __construct()
 		{
 			try{
