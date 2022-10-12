@@ -11,6 +11,7 @@ $sql = sprintf("SELECT * FROM sanmarcos_nodo;");
 		$response []= array(
             'nod_int_id' => $rows['nod_int_id'],
             'nod_txt_description'=>$row['nod_txt_description'],
+            'nod_txt_latitud' => $rows['nod_double_latitud'],
             'nod_txt_name' => $rows['nod_txt_name']
 					);
 	}
