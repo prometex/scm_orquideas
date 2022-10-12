@@ -1,7 +1,7 @@
 <?php 
 require '../config.php';
 header('Content-Type: application/json');
-$sql="";
+$sql="SELECT * FROM `sanmarcos_nodo`";
 $query = $mysqli->query($sql);
 while($rows = $query->fetch_array()) {
 		
