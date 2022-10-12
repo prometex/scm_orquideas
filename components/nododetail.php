@@ -13,6 +13,7 @@ $sql = sprintf("SELECT * FROM sanmarcos_nodo;");
             'nod_txt_description'=>$row['nod_txt_description'],
             'nod_txt_latitud' => $rows['nod_double_latitud'],
             'nod_txt_longitud' => $rows['nod_double_longitud'],
+            'nod_txt_distrito' => $rows['nod_txt_distrito'],
             'nod_txt_name' => $rows['nod_txt_name']
 					);
 	}
@@ -36,7 +37,7 @@ while($rows = $query->fetch_array()) {
                 'nod_txt_description' => $rows['nod_txt_description'],
                 'nod_txt_latitud' => $rows['nod_double_latitud'],
                 'nod_txt_longitud' => $rows['nod_double_longitud'],
-                'nod_txt_distrito' => $rows['nod_txt_distrito'],
+                
                 'nod_txt_provincia' => $rows['nod_txt_provincia'],
                 'nod_txt_region'=> $rows['nod_txt_region'],
                 'nod_txt_habilitado' => $rows['nod_int_habilitado'],
