@@ -13,8 +13,6 @@ $sql = sprintf("SELECT * FROM sanmarcos_nodo;");
             'nod_txt_description' => $rows['nod_txt_description'],
             'nod_double_latitud' => $rows['nod_double_latitud'],
             'nod_double_longitud' => $rows['nod_double_longitud'],
-            'nod_txt_distrito' => $rows['nod_txt_distrito'],
-            'nod_txt_provincia' => $rows['nod_txt_provincia'],
             'nod_txt_name' => $rows['nod_txt_name']
 					);
 	}
