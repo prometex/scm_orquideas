@@ -21,7 +21,7 @@ while($rows = $query->fetch_array()) {
 		
     $response []= array(
 
-                'nod_int_iu' => $rows['nod_int_id'],
+                'nod_int_id' => $rows['nod_int_id'],
                 'nod_txt_name' => $rows['nod_txt_name'],
                 'nod_txt_description' => $rows['nod_txt_description'],
                 'nod_txt_latitud' => $rows['nod_double_latitud'],
@@ -37,3 +37,4 @@ while($rows = $query->fetch_array()) {
 }
 
 echo json_encode($response);
+?>
