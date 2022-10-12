@@ -16,8 +16,8 @@ $sql = sprintf("SELECT * FROM sanmarcos_nodo;");
             'nod_txt_distrito' => $rows['nod_txt_distrito'],
             'nod_txt_provincia' => $rows['nod_txt_provincia'],
             'nod_txt_region'=> $rows['nod_txt_region'],
-            'nod_txt_provincia' => $rows['nod_txt_provincia'],
-            'nod_txt_region'=> $rows['nod_txt_region'],
+            'nod_txt_registro' => $rows['nod_date_registro'],
+            'nod_txt_actualizacion' => $rows['nod_date_actualizacion'],
             'nod_txt_name' => $rows['nod_txt_name']
 					);
 	}
@@ -44,7 +44,8 @@ while($rows = $query->fetch_array()) {
                 
 ,
                 'nod_txt_habilitado' => $rows['nod_int_habilitado'],
-x
+                'nod_txt_registro' => $rows['nod_date_registro'],
+                'nod_txt_actualizacion' => $rows['nod_date_actualizacion']
 
                 );
 }
