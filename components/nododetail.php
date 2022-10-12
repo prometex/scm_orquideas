@@ -10,6 +10,7 @@ $sql = sprintf("SELECT * FROM sanmarcos_nodo;");
 		
 		$response []= array(
             'nod_int_id' => $rows['nod_int_id'],
+            'nod_txt_description'=>"paul",
             'nod_txt_name' => $rows['nod_txt_name']
 					);
 	}
