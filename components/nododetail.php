@@ -1,12 +1,7 @@
 <?php 
 require '../config.php';
 header('Content-Type: application/json');
-$sql = sprintf("SELECT * FROM scm_monitoreo sm 
-                INNER JOIN sanmarcos_nodo sn ON 
-                sm.nod_int_id=sn.nod_int_id WHERE 
-                mon_int_id IN (SELECT MAX(mon_int_id) 
-                FROM scm_monitoreo GROUP BY nod_int_id) 
-                ORDER BY mon_int_id DESC");
+$sql = sprintf("SELECT * FROM sanmarcos_nodo;");
 	$query = $mysqli->query($sql);
 	
 	$response = array();
@@ -15,16 +10,38 @@ $sql = sprintf("SELECT * FROM scm_monitoreo sm
 		
 		$response []= array(
 
-                    'nod_txt_name' => $rows['nod_txt_name'],
-                    'case_temperatura' => $rows['mon_double_ta'],
-                    'case_humedad' => $rows['mon_double_hr'],
-                    'case_calor' => $rows['mon_double_ic'],
-                    'case_luz' => $rows['mon_double_il'],
-                    'case_uv' => $rows['mon_varchar_uv'],
-                    'case_rango' => $rows['mon_varchar_rango'],
-                    'case_hs' => $rows['mon_varchar_hs'],
-                    'case_registro' => $rows['mon_date_registro']
+            'nod_txt_name' => $rows['nod_txt_name']
 					);
 	}
 	
 	echo json_encode($response);
+
+
+/* <?php 
+
+require '../config.php';
+header('Content-Type: application/json');
+$sql=sprintf("SELECT * FROM sanmarcos_nodo");
+$query = $mysqli->query($sql);
+$response = array();
+while($rows = $query->fetch_array()) {
+		
+    $response []= array(
+
+                'nod_int_id' => $rows['nod_int_id'],
+                'nod_txt_name' => $rows['nod_txt_name'],
+                'nod_txt_description' => $rows['nod_txt_description'],
+                'nod_txt_latitud' => $rows['nod_double_latitud'],
+                'nod_txt_longitud' => $rows['nod_double_longitud'],
+                'nod_txt_distrito' => $rows['nod_txt_distrito'],
+                'nod_txt_provincia' => $rows['nod_txt_provincia'],
+                'nod_txt_region'=> $rows['nod_txt_region'],
+                'nod_txt_habilitado' => $rows['nod_int_habilitado'],
+                'nod_txt_registro' => $rows['nod_date_registro'],
+                'nod_txt_actualizacion' => $rows['nod_date_actualizacion']
+
+                );
+}
+
+echo json_encode($response);
+ */
