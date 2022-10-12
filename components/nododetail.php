@@ -1,8 +1,9 @@
 <?php 
 require '../config.php';
 header('Content-Type: application/json');
-$sql="SELECT * FROM `sanmarcos_nodo`";
+$sql=sprintf("SELECT * FROM `sanmarcos_nodo`");
 $query = $mysqli->query($sql);
+$response = array();
 while($rows = $query->fetch_array()) {
 		
     $response []= array(
